@@ -1,0 +1,39 @@
+/*
+ * Copyright (c) 2026 The ZMK Contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
+
+/ {
+    behaviors {
+        wheel: wheel {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base {
+            bindings = <
+                &lt 1 ESC  &kp Q      &kp W      &kp E                      &kp Y    &kp U    &kp I    &kp O
+                &kp LSHFT  &kp A      &kp S      &kp D      &kp SPACE  &kp TAB  &kp H    &kp J    &kp K    &kp L
+            >;
+            sensor-bindings = <&wheel>;
+        };
+
+        bluetooth {
+            bindings = <
+                &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2                 &trans  &trans  &trans  &trans
+                &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+            sensor-bindings = <&wheel>;
+        };
+    };
+};

@@ -1,0 +1,12 @@
+file_format: "1"
+id: dogtag
+name: DogTag
+type: shield
+url: https://github.com/takashicompany/dogtag
+requires: [pro_micro]
+features:
+  - keys
+  - encoder
+siblings:
+  - dogtag_left
+  - dogtag_right
