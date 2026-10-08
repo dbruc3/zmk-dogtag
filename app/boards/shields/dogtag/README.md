@@ -19,7 +19,9 @@ The original split serial pin D2 maps to connector pin 1, but this port uses ZMK
 
 ## Build
 
-In a [ZMK west workspace](https://zmk.dev/docs/development/setup), from the repository root:
+On GitHub, open **Actions → DogTag firmware → Run workflow** and choose `main`. The workflow builds both halves; download the `dogtag_left-nice_nano` and `dogtag_right-nice_nano` artifacts from the completed run.
+
+For a local build, use a [ZMK west workspace](https://zmk.dev/docs/development/setup) and run from the repository root:
 
 ```sh
 west build -s app -p -b nice_nano/nrf52840/zmk -- -DSHIELD=dogtag_left
