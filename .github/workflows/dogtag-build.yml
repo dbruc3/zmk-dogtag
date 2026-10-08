@@ -15,10 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker.io/zmkfirmware/zmk-build-arm:4.1
-    strategy:
-      fail-fast: false
-      matrix:
-        shield: [dogtag_left, dogtag_right]
     steps:
       - uses: actions/checkout@v7
       - name: Initialize ZMK workspace
@@ -26,11 +22,11 @@ jobs:
           west init -l app
           west update --fetch-opt=--filter=tree:0
           west zephyr-export
-      - name: Build ${{ matrix.shield }}
-        run: west build -s app -p -b nice_nano@2.0.0/nrf52840/zmk -- -DSHIELD=${{ matrix.shield }}
-      - name: Upload ${{ matrix.shield }} firmware
+      - name: Build DogTag
+        run: west build -s app -p -b nice_nano@2.0.0/nrf52840/zmk -- -DSHIELD=dogtag
+      - name: Upload DogTag firmware
         uses: actions/upload-artifact@v7
         with:
-          name: ${{ matrix.shield }}-nice_nano_v2
+          name: dogtag-nice_nano_v2
           path: build/zephyr/zmk.uf2
           if-no-files-found: error

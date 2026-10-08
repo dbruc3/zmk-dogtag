@@ -22,16 +22,16 @@
 
         base {
             bindings = <
-                &lt 1 ESC  &kp Q      &kp W      &kp E                      &kp Y    &kp U    &kp I    &kp O
-                &kp LSHFT  &kp A      &kp S      &kp D      &kp SPACE  &kp TAB  &kp H    &kp J    &kp K    &kp L
+                &lt 1 ESC  &kp Q      &kp W      &kp E
+                &kp LSHFT  &kp A      &kp S      &kp D      &kp SPACE
             >;
             sensor-bindings = <&wheel>;
         };
 
         bluetooth {
             bindings = <
-                &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2                 &trans  &trans  &trans  &trans
-                &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2
+                &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
             >;
             sensor-bindings = <&wheel>;
         };

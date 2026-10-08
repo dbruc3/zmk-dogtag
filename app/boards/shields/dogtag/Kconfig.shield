@@ -1,8 +1,5 @@
 # Copyright (c) 2026 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config SHIELD_DOGTAG_LEFT
-    def_bool $(shields_list_contains,dogtag_left)
-
-config SHIELD_DOGTAG_RIGHT
-    def_bool $(shields_list_contains,dogtag_right)
+config SHIELD_DOGTAG
+    def_bool $(shields_list_contains,dogtag)

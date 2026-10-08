@@ -7,6 +7,3 @@ requires: [pro_micro]
 features:
   - keys
   - encoder
-siblings:
-  - dogtag_left
-  - dogtag_right

@@ -1,19 +1,9 @@
 # Copyright (c) 2026 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_DOGTAG_LEFT
+if SHIELD_DOGTAG
 
 config ZMK_KEYBOARD_NAME
     default "DogTag"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif
-
-if SHIELD_DOGTAG_LEFT || SHIELD_DOGTAG_RIGHT
-
-config ZMK_SPLIT
-    default y
 
 endif
