@@ -27,10 +27,10 @@ jobs:
           west update --fetch-opt=--filter=tree:0
           west zephyr-export
       - name: Build ${{ matrix.shield }}
-        run: west build -s app -p -b nice_nano/nrf52840/zmk -- -DSHIELD=${{ matrix.shield }}
+        run: west build -s app -p -b nice_nano@2.0.0/nrf52840/zmk -- -DSHIELD=${{ matrix.shield }}
       - name: Upload ${{ matrix.shield }} firmware
         uses: actions/upload-artifact@v7
         with:
-          name: ${{ matrix.shield }}-nice_nano
+          name: ${{ matrix.shield }}-nice_nano_v2
           path: build/zephyr/zmk.uf2
           if-no-files-found: error

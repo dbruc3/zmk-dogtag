@@ -8,24 +8,24 @@ ZMK does not run on the original ATmega32U4 Pro Micro. Replace each Pro Micro wi
 
 The shield uses the QMK pin assignment translated to Pro Micro connector labels:
 
-| Function | QMK pins | ZMK Pro Micro pins |
-| --- | --- | --- |
-| Columns, left | F4 F5 F6 F7 B1 | 21 20 19 18 15 |
-| Columns, right | B1 F7 F6 F5 F4 | 15 18 19 20 21 |
-| Rows | B2 B6 | 16 10 |
-| Encoder A/B | D4 C6 | 4 5 |
+| Function       | QMK pins       | ZMK Pro Micro pins |
+| -------------- | -------------- | ------------------ |
+| Columns, left  | F4 F5 F6 F7 B1 | 21 20 19 18 15     |
+| Columns, right | B1 F7 F6 F5 F4 | 15 18 19 20 21     |
+| Rows           | B2 B6          | 16 10              |
+| Encoder A/B    | D4 C6          | 4 5                |
 
 The original split serial pin D2 maps to connector pin 1, but this port uses ZMK's Bluetooth split transport. Each half needs its own power source for wireless use.
 
 ## Build
 
-On GitHub, open **Actions → DogTag firmware → Run workflow** and choose `main`. The workflow builds both halves; download the `dogtag_left-nice_nano` and `dogtag_right-nice_nano` artifacts from the completed run.
+On GitHub, open **Actions → DogTag firmware → Run workflow** and choose `main`. The workflow builds both halves for nice!nano v2; download the `dogtag_left-nice_nano_v2` and `dogtag_right-nice_nano_v2` artifacts from the completed run.
 
 For a local build, use a [ZMK west workspace](https://zmk.dev/docs/development/setup) and run from the repository root:
 
 ```sh
-west build -s app -p -b nice_nano/nrf52840/zmk -- -DSHIELD=dogtag_left
-west build -s app -p -b nice_nano/nrf52840/zmk -- -DSHIELD=dogtag_right
+west build -s app -p -b nice_nano@2.0.0/nrf52840/zmk -- -DSHIELD=dogtag_left
+west build -s app -p -b nice_nano@2.0.0/nrf52840/zmk -- -DSHIELD=dogtag_right
 ```
 
 Copy each resulting `build/zephyr/zmk.uf2` before starting the next build. Flash the matching image to each half. Edit `dogtag.keymap` for bindings and `dogtag.conf` for features.
