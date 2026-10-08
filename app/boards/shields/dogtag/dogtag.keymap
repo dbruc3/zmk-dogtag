@@ -8,12 +8,17 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&lt {
+    flavor = "hold-preferred";
+};
+
 / {
     behaviors {
         wheel: wheel {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <150>;
         };
     };
 
