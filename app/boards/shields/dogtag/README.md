@@ -1,8 +1,6 @@
 # DogTag for ZMK
 
-This shield ports the [DogTag QMK definition](https://github.com/qmk/qmk_firmware/tree/master/keyboards/takashicompany/dogtag) to ZMK for one nine-key pad and its rotary encoder. This diagnostic layout temporarily uses the key that previously typed Z to switch to the Bluetooth layer. Press it again to return to the base layer. The matrix transform temporarily includes all ten possible positions so the physical ninth switch can be located.
-
-To test this build, stay on the base layer and tap the top-row keys from left to right. Record the characters they produce. The two possible end positions are marked **X** and **V**. No physical key produced X in the previous build, so locating V will identify the unused matrix position. The encoder changes volume instead of scrolling.
+This shield ports the [DogTag QMK definition](https://github.com/qmk/qmk_firmware/tree/master/keyboards/takashicompany/dogtag) to ZMK for one nine-key pad and its rotary encoder. The pin order follows the left-hand assembly in QMK. Tap the first mapped key for Escape or hold it for the Bluetooth layer. On that layer, Q, W, E, A, and S select Bluetooth profiles 1 through 5 respectively. The encoder is bound to vertical scrolling.
 
 ## Controller and connection
 
@@ -28,4 +26,4 @@ west build -s app -p -b nice_nano@2.0.0/nrf52840/zmk -- -DSHIELD=dogtag
 
 Flash `build/zephyr/zmk.uf2` to the nice!nano v2. Edit `dogtag.keymap` for bindings and `dogtag.conf` for features.
 
-The nine switches and encoder press have been tested on physical DogTag hardware. Encoder rotation and Bluetooth layer activation are being diagnosed. Check the controller model and PCB orientation when flashing it.
+This restores the first single-DogTag keymap and matrix transform. The eight keys and encoder press were reported working with that mapping. Bluetooth layer activation and encoder scrolling remain unconfirmed on this hardware.
