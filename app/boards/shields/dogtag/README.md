@@ -1,8 +1,8 @@
 # DogTag for ZMK
 
-This shield ports the [DogTag QMK definition](https://github.com/qmk/qmk_firmware/tree/master/keyboards/takashicompany/dogtag) to ZMK for one nine-key pad and its rotary encoder. The pin order follows the left-hand assembly in QMK. Tap the top outside key for Escape or hold it for the Bluetooth layer. On that layer, the positions normally labeled Q, W, E, A, and S select Bluetooth profiles 1 through 5 respectively; D clears the selected profile's pairing and Space enters the bootloader. The encoder scrolls vertically.
+This shield ports the [DogTag QMK definition](https://github.com/qmk/qmk_firmware/tree/master/keyboards/takashicompany/dogtag) to ZMK for one nine-key pad and its rotary encoder. The pin order follows the left-hand assembly in QMK. Hold the top outside key for the Bluetooth layer. On that layer, the positions normally labeled Q, W, E, A, and S select Bluetooth profiles 1 through 5 respectively; D clears the selected profile's pairing and Space enters the bootloader.
 
-For a temporary flash check, the base-layer Q position currently sends **Z**. This makes it easy to tell whether the latest firmware was installed. The Bluetooth layer assignment at that position remains profile 1.
+This is a diagnostic keymap. The base-layer Q position sends **Z** to check whether the latest firmware was installed. The top outside key activates the Bluetooth layer only while held, with no Escape tap. Turn the encoder to change volume instead of scrolling. These changes let us check the layer key and encoder independently before restoring the intended actions.
 
 ## Controller and connection
 
@@ -28,4 +28,4 @@ west build -s app -p -b nice_nano@2.0.0/nrf52840/zmk -- -DSHIELD=dogtag
 
 Flash `build/zephyr/zmk.uf2` to the nice!nano v2. Edit `dogtag.keymap` for bindings and `dogtag.conf` for features.
 
-The pin map and firmware have not yet been tested on physical DogTag hardware. Check the controller model, PCB orientation, and encoder direction when flashing it.
+The nine switches and encoder press have been tested on physical DogTag hardware. Encoder rotation and Bluetooth layer activation are being diagnosed. Check the controller model and PCB orientation when flashing it.
