@@ -1,6 +1,8 @@
 # DogTag for ZMK
 
-This shield ports the [DogTag QMK definition](https://github.com/qmk/qmk_firmware/tree/master/keyboards/takashicompany/dogtag) to ZMK for one nine-key pad and its rotary encoder. The pin order follows the left-hand assembly in QMK. Tap the top outside key for Escape or hold it for the Bluetooth layer. On that layer, Q, W, E, A, and S select Bluetooth profiles 1 through 5 respectively; D clears the selected profile's pairing and Space enters the bootloader. The encoder scrolls vertically.
+This shield ports the [DogTag QMK definition](https://github.com/qmk/qmk_firmware/tree/master/keyboards/takashicompany/dogtag) to ZMK for one nine-key pad and its rotary encoder. The pin order follows the left-hand assembly in QMK. Tap the top outside key for Escape or hold it for the Bluetooth layer. On that layer, the positions normally labeled Q, W, E, A, and S select Bluetooth profiles 1 through 5 respectively; D clears the selected profile's pairing and Space enters the bootloader. The encoder scrolls vertically.
+
+For a temporary flash check, the base-layer Q position currently sends **Z**. This makes it easy to tell whether the latest firmware was installed. The Bluetooth layer assignment at that position remains profile 1.
 
 ## Controller and connection
 

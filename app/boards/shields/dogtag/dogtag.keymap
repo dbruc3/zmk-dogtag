@@ -27,7 +27,7 @@
 
         base {
             bindings = <
-                &lt 1 ESC  &kp Q      &kp W      &kp E
+                &lt 1 ESC  &kp Z      &kp W      &kp E
                 &kp LSHFT  &kp A      &kp S      &kp D      &kp SPACE
             >;
             sensor-bindings = <&wheel>;
