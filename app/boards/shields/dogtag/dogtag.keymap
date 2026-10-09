@@ -13,7 +13,7 @@
 
         base {
             bindings = <
-                &kp X      &to 1      &kp W      &kp E
+                &kp X      &to 1      &kp W      &kp E      &kp V
                 &kp LSHFT  &kp A      &kp S      &kp D      &kp SPACE
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -21,8 +21,8 @@
 
         bluetooth {
             bindings = <
-                &kp X      &to 0         &kp Y         &bt BT_SEL 0
-                &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
+                &kp X         &to 0         &kp Y         &bt BT_SEL 0  &bt BT_SEL 1
+                &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &bootloader
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
