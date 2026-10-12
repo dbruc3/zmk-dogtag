@@ -13,7 +13,7 @@
 
         base {
             bindings = <
-                &lt 1 ESC  &kp Q      &kp W      &kp ESC
+                &kp LSHFT  &kp Q      &kp W      &kp ESC
                 &kp LSHFT  &kp A      &kp S      &kp ENTER      &kp SPACE
             >;
             sensor-bindings = <&inc_dec_kp DOWN UP>;

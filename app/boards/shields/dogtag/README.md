@@ -1,6 +1,6 @@
 # DogTag for ZMK
 
-This shield ports the [DogTag QMK definition](https://github.com/qmk/qmk_firmware/tree/master/keyboards/takashicompany/dogtag) to ZMK for one nine-key pad and its rotary encoder. The pin order follows the left-hand assembly in QMK. Tap the first mapped key for Escape or hold it for the Bluetooth layer. On that layer, Q, W, E, A, and S select Bluetooth profiles 1 through 5 respectively, and pressing the encoder enters the bootloader. Clockwise/counterclockwise encoder rotation sends Down/Up on the base layer and Right/Left on the Bluetooth layer.
+This shield ports the [DogTag QMK definition](https://github.com/qmk/qmk_firmware/tree/master/keyboards/takashicompany/dogtag) to ZMK for one nine-key pad and its rotary encoder. The pin order follows the left-hand assembly in QMK. The first mapped key is temporarily bound to Left Shift to test that switch; the Bluetooth layer cannot be entered with this diagnostic keymap. When the Bluetooth layer is accessible again, Q, W, E, A, and S select Bluetooth profiles 1 through 5 respectively, and pressing the encoder enters the bootloader. Clockwise/counterclockwise encoder rotation sends Down/Up on the base layer and Right/Left on the Bluetooth layer.
 
 ## Controller and connection
 
@@ -26,4 +26,4 @@ west build -s app -p -b nice_nano@2.0.0/nrf52840/zmk -- -DSHIELD=dogtag
 
 Flash `build/zephyr/zmk.uf2` to the nice!nano v2. Edit `dogtag.keymap` for bindings and `dogtag.conf` for features.
 
-The matrix transform follows the original single-DogTag layout. The first-column keys (Escape/layer and Left Shift) were reported silent on the current hardware; their physical connection and the updated firmware still need verification.
+The matrix transform follows the original single-DogTag layout. The regular Left Shift key works. The former Escape/layer key is temporarily another Left Shift binding so its physical switch can be checked by holding it and tapping A.
